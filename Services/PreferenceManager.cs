@@ -13,7 +13,7 @@ namespace NoPopsUI.Maui.Services
 
         public static bool LoadUserPreferences()
         {
-            throw new NotImplementedException();
+           return false;
         }
 
     }

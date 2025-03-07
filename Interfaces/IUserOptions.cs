@@ -9,6 +9,6 @@ namespace NoPopsUI.Maui.Interfaces
     public interface IUserOptions
     {
         bool UseDefaultBrowser { get; set; }
-        
+
     }
 }

@@ -8,5 +8,5 @@ namespace NoPopsUI.Maui.Controls;
 
 public partial class CustomWebView : WebView
 {
-
+    public object? Control { get; set; } = null;
 }

@@ -5,21 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NoPopsUI.Maui.Models
-{
-    public class Website : IWebsite
-    {
-        public Uri? BaseUri { get; set; } = null;
-        public string BasePath { get; set; } = string.Empty;
-        public string Host { get; set; } = string.Empty;
+namespace NoPopsUI.Maui.Models;
 
-        public static IWebsite Create(Uri? uri)
+/// <summary>
+/// Represents a website.
+/// </summary>
+public class Website : IWebsite
+{
+    public Uri? BaseUri { get; set; } = null;
+    public string BasePath { get; set; } = string.Empty;
+    public string Host { get; set; } = string.Empty;
+
+    public static IWebsite Create(Uri? uri)
+    {
+        if (uri != null)
         {
-            if (uri != null)
-            {
-                return new Website { BaseUri = uri, BasePath = uri.AbsolutePath, Host = uri.Host };
-            }
-            return new Website();
+            return new Website { BaseUri = uri, BasePath = uri.AbsolutePath, Host = uri.Host };
         }
+        return new Website();
     }
 }

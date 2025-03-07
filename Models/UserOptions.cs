@@ -9,7 +9,7 @@ namespace NoPopsUI.Maui.Models
 {
     public class UserOptions : IUserOptions
     {
-        public bool UseDefaultBrowser { get; set; }
+        public bool UseDefaultBrowser { get; set; } = true;
 
     }
 }

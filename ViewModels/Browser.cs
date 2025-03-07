@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using NoPopsUI.Maui.Controls;
 using NoPopsUI.Maui.Models;
 using System;
@@ -6,36 +7,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace NoPopsUI.Maui.ViewModels;
 
 public partial class Browser : ObservableObject
 {
 
-    public string? WebsitePickerTitle { get; set; }
-
-    public IList<Website>? WebsitePickerItemsSource { get; set; }
-
-    public Website? WebsitePickerSelectedItem { get; set; }
-
-    public object? GoToHomeImageButtonSource { get; set; }
-
-    public object? GoToHomeImageButtonCommand { get; set; }
-
+    public string? WebsitePickerTitle { get; set; } = "Choose a Website";
+    public IList<Website>? WebsitePickerItemsSource { get; set; } = [];
+    public Website? WebsitePickerSelectedItem { get; set; } = null;
+    public string? GoToHomeImageButtonSource { get; set; } = $"icon_house.svg";
     public CustomWebView? CustomWebViewSource { get; set; }
+
+    public Browser()
+    {
+        WebsitePickerItemsSource = [
+            new Website { BaseUri = new Uri("https://mangafire.to"), BasePath = "mangafire.to", Host = "MangaFire" },
+            ];
+    }
 
     public void CustomWebViewNavigating(object? sender, WebNavigatingEventArgs e)
     {
-        throw new NotImplementedException();
+        
     }
 
     public void ShellTitleViewOnPinchedUpdated(object? sender, PinchGestureUpdatedEventArgs e)
     {
-        throw new NotImplementedException();
+       
     }
 
     public void WebsitePickerSelectedIndexChanged(object? sender, EventArgs e)
     {
-        throw new NotImplementedException();
+       
     }
+
+    [RelayCommand]
+    public void GoToHomeImageButtonCommand()
+    {
+        
+    }
+
 }
